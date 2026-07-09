@@ -1,0 +1,39 @@
+# ── Never ship data / corpora ─────────────────────────────
+*.pdf
+*.npy
+*.jsonl
+*.csv
+*.tsv
+*.parquet
+*.sqlite
+*.db
+# harvested-corpus directories
+pdfs/
+patents/
+nodes/
+*_lit/
+academic_output/
+arxiv_pdfs/
+
+# ── Secrets ────────────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+secrets*
+
+# ── Python / build junk ───────────────────────────────────
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ── OS / editor ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+
+# NOTE: a plugin skill directory should contain ONLY SKILL.md.
+# Implementation scripts (*.py / *.html) and data files belong in a
+# separate MCP server or repo — never bundled per-skill.
+# (Config JSON like plugin.json / marketplace.json is intentionally NOT ignored.)
