@@ -1,0 +1,16 @@
+{
+  "name": "justin-plugins",
+  "owner": {
+    "name": "Justin",
+    "email": "justin.chang1223@gmail.com"
+  },
+  "description": "Problem-consciousness method plugin",
+  "plugins": [
+    {
+      "name": "problem-consciousness",
+      "source": "./problem-consciousness",
+      "description": "問題意識邏輯 通用方法包",
+      "version": "0.1.0"
+    }
+  ]
+}
