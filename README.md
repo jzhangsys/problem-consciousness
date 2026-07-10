@@ -7,7 +7,7 @@ read where a field is heading from the structure of its literature and patents.
 
 ## Install
 ```
-/plugin marketplace add <this-repo-or-path>
+/plugin marketplace add jzhangsys/problem-consciousness
 /plugin install problem-consciousness@justin-plugins
 ```
 
@@ -23,5 +23,5 @@ claude plugin validate ./problem-consciousness --strict
 ```
 
 ## Scope note
-The core is intentionally **domain-neutral**. A thermal / semiconductor-cooling domain pack is
-kept as a separate concern and is **not** bundled here, so the general method stays clean.
+The plugin is intentionally **domain-neutral** — it ships with no domain-specific defaults or
+examples, so the same method applies to any field.
