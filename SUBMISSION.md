@@ -32,7 +32,7 @@ Reusable reference for the Claude plugin submission form
 > Installs problem-consciousness into AI workflows — frame a measurable problem, verify the real bottleneck, anchor every downstream step, and gate before propagating.
 
 **Long**
-> A domain-general governance + method layer that installs problem-consciousness into AI workflows: a Meta layer fixes epistemic status and clears framing anti-patterns before any domain method runs; a P0–P10 state machine refuses "Done" until a problem model is qualified; peer cross-check + a deterministic arbiter keep multi-agent consensus from overriding computed truth; every downstream step is anchored to a framed problem and citation-gated. 84 skills (81 method + 3 governance).
+> A domain-general governance + method layer that installs problem-consciousness into AI workflows: a Meta layer fixes epistemic status and clears framing anti-patterns before any domain method runs; a P0–P10 state machine refuses "Done" until a problem model is qualified; peer cross-check + a deterministic arbiter keep multi-agent consensus from overriding computed truth; every downstream step is anchored to a framed problem and citation-gated. This is the domain-neutral core (25 skills: governance + framing + general critique/verification); an optional companion pack, problem-consciousness-frontier (59 skills), carries the patent/thermal white-space analysis pipeline.
 
 ## Example use cases
 1. **Frame a fuzzy topic into a problem-anchored research corpus** — framed open topics (vibe-coding problems, SEO/GEO, sensory marketing) into ~10 measurable problem nodes, then harvested papers and patents by problem and organized them per node.

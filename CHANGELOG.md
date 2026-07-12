@@ -42,7 +42,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Gate tests expanded 6 → 13 (ack-log content, logging-failure fail-open, off/warn/unknown
   modes), all routed through a throwaway HOME so tests never touch the real home dir.
 
-### Changed
+### Changed — split into neutral core + frontier pack
+- The single 84-skill plugin was split into two: **`problem-consciousness`** (25-skill
+  domain-neutral core: governance + framing + general critique/verification + the gate) and
+  **`problem-consciousness-frontier`** (59-skill optional pack: the patent/thermal
+  corpus → geometry → lifecycle → white-space pipeline). This makes the README's
+  domain-neutrality claim true — 55/84 skills previously carried residue from a specific
+  patent-landscape / thermal-materials project (本專案 self-refs, 70+ `.py` names,
+  census/CPC/openclaw, thermal examples).
+- Core framing skills were scrubbed of project residue (method content unchanged; only
+  project-specific tokens genericized). `marketplace.json` now lists both plugins.
+- Tooling made two-plugin aware: `gen-skill-catalog.js` (Core + Frontier parts),
+  `check-skill-refs.js` (family-aware refs), `check-version.sh` (frontier manifest + all
+  marketplace entries), and CI validates both plugins.
 - README rewritten to be user-oriented: leads with the "gate, not a reminder"
   differentiator, adds a before/after of the mis-framed-request problem, a 60-second
   Quickstart, a "what you'll see" demo section, and links to `docs/SKILLS.md` and

@@ -59,16 +59,22 @@ The differentiating moment is the gate firing on the first mutating action:
 
 ## What's inside
 
-**84 skills** — 81 method + 3 governance:
+This is the **neutral core** — **25 skills**: governance + framing + general-purpose
+critique/verification, plus the gate. Governance three:
 - `meta-problem-layer` — fix the epistemic status and clear framing anti-patterns before any method runs
 - `problem-state-machine` — a P0–P10 pipeline that refuses "Done" until the problem is qualified
 - `peer-cross-check` — keep multi-agent verdicts honest, with a deterministic arbiter over consensus
 
-Method skills cover framing · problem-anchored harvest · downstream geometry/lifecycle ·
-critique & verification.
+The rest cover problem framing · problem-anchored harvest · domain-general critique lenses
+· validation gates.
+
+> **Companion pack.** A separate, optional plugin — **`problem-consciousness-frontier`**
+> (59 skills) — carries a concrete corpus → geometry → lifecycle → white-space analysis
+> pipeline distilled from patent-landscape and thermal/materials research. It is deliberately
+> **not** bundled into the neutral core; install it only if you want that domain machinery.
 
 - **[Worked examples →](docs/EXAMPLES.md)** (three before/after walkthroughs)
-- **[Browse all 84 skills →](docs/SKILLS.md)** (grouped catalog with one-line summaries)
+- **[Browse the full skill catalog →](docs/SKILLS.md)** (core + frontier, grouped)
 - **[Architecture →](problem-consciousness/ARCHITECTURE.md)** (the three-layer model and load-bearing gates)
 
 ## How it enforces
@@ -103,16 +109,24 @@ error in config parsing or logging still allows your action.
 
 ```
 /plugin marketplace add jzhangsys/problem-consciousness
+
+# the neutral core (recommended for everyone)
 /plugin install problem-consciousness@justin-plugins
+
+# optional: the patent/thermal white-space analysis pack
+/plugin install problem-consciousness-frontier@justin-plugins
 ```
 
 ## Validate
 
 ```
 claude plugin validate ./problem-consciousness --strict
+claude plugin validate ./problem-consciousness-frontier --strict
 ```
 
 ## Scope note
 
-The plugin is intentionally **domain-neutral** — it ships with no domain-specific defaults or
-examples, so the same method applies to any field.
+The core plugin is intentionally **domain-neutral** — it ships with no domain-specific
+defaults or examples, so the same method applies to any field. Anything tied to a specific
+field (patent census, geometry/lifecycle analyses, a supporting Python toolchain) lives in
+the separate `problem-consciousness-frontier` pack, keeping this claim honest.

@@ -36,3 +36,13 @@ about the wrong question*.
 
 The method skills are the tools; the governance layer is the constitution that keeps every tool
 anchored to a well-framed problem and gated before it propagates.
+
+## Two plugins: neutral core + frontier pack
+
+This plugin (`problem-consciousness`, 25 skills) is the **domain-neutral core**: governance,
+framing, general-purpose critique/verification, and the gate. A separate, optional plugin —
+`problem-consciousness-frontier` (59 skills) — holds the concrete downstream pipeline
+(corpus → geometry → lifecycle → white-space) distilled from patent-landscape and
+thermal/materials research, along with its supporting Python toolchain. The split keeps the
+core genuinely field-agnostic while preserving the domain machinery for those who want it.
+The frontier pack depends on the core; the core stands alone.
