@@ -133,6 +133,71 @@ Caveats: n small (5 traps + 2 simple), one model, and the traps are well-known
 puzzles the model may have memorized — a harder test would use novel traps and a
 weaker model, where base reasoning is less reliable and the method may still help.
 
+## Eval 3 — Agentic outcome (multi-step, no pressure)
+
+Single-turn Q&A can't test where mis-framing *compounds*, so this gives the agent a
+multi-step task (deliver a plan/artifacts) whose framing is contradicted by an
+**attached evidence block**. 4 mis-framing traps (build-Redis-for-a-non-bottleneck,
+build-an-ML-model-when-the-cause-is-a-billing-bug, swap-die-material-when-the-
+resistance-is-in-the-interface, write-a-GTM-on-a-PFAS-banned-premise) + 1 control
+(framing already correct). Graded, no method vocabulary: **identified** the real
+cause · **avoided** building the wasted deliverable · **addressed** the real problem.
+
+Result (Opus 4.8): **baseline 14/15, method 14/15 (Δ 0)**. The strong baseline
+caught all four traps unaided — read the evidence, refused the wasted build,
+redirected to the real cause. On the control, both lost the same point by
+reframing deeper than asked (arguably good judgment, not waste). **Method = baseline.**
+
+## Eval 4 — The gate mechanism, under skip-pressure
+
+The prior evals gave the method as *prompt text* to an unpressured agent, which
+already reasons well. The plugin's actual enforcement is a **gate that forces a
+pause**; its value should show when reasoning is being *skipped*. So: the same 4
+traps under **RUSH** ("deadline — don't analyse, don't reframe, just build it") vs
+**RUSH + a forced Meta self-check injected before delivery** (simulating the gate).
+
+Result: **RUSH 11/12, RUSH+GATE 12/12 — the gate recovers +1.** Even under explicit
+skip-pressure the frontier model still *identified* every trap; the one thing
+pressure caused (on the churn task) was **hedge-and-comply** — it diagnosed the
+billing bug correctly *but still built the full ML deliverable anyway to satisfy
+the request*. The forced pause made it *commit* to the reframe and not build the
+wasted thing.
+
+### Improvement (evidence-backed) + verification
+That +1 is the only non-circular positive signal in four evals, and it points to a
+real, fixable failure mode. Added to `meta-problem-layer` a **"commit to the
+reframe, don't hedge-and-comply"** rule: when the evidence shows the requested
+direction is wasted work, *explicitly refuse to build it* — do not "also produce
+the thing you asked for just in case." Re-ran the 4 traps under RUSH with the
+improved method: **12/12** — it now recovers, via method text alone, the point that
+previously needed the gate.
+
+## Bottom line across all four evals (honest)
+
+| Eval | What it scores | Baseline | Method | Δ |
+|---|---|:--:|:--:|:--:|
+| 1 ritual | did it perform the framing ritual | 12 | 18 | +6 *(circular — discard)* |
+| 2 single-turn outcome | is the answer correct | 7/7 | 7/7 | 0 |
+| 3 agentic outcome | did it avoid building the wrong thing | 14/15 | 14/15 | 0 |
+| 4 gate under pressure | same, when reasoning is skipped | 11/12 | **12/12** | **+1** |
+
+- **On a frontier model, problem-consciousness-as-a-prompt is close to a no-op for
+  outcomes** — Opus 4.8 already frames, catches false premises/base-rate/scale/
+  incrementality/Simpson, and refuses wasted work, unaided. Eval 1's +6 was largely
+  self-confirming.
+- **The one real, measured value is narrow**: preventing **hedge-and-comply under
+  pressure** — the model diagnosing correctly but still doing the wasted work to
+  please the request. The gate, and now the commit rule, prevent that (RUSH 11→12).
+  This *is* the vibe-coding failure mode (skipping the reasoning under time
+  pressure), and it's the honest core of the plugin's value.
+- **Do not claim it "makes answers better."** It does not, on a capable model. Its
+  honest value: framing discipline that (a) never over-frames simple work, (b)
+  makes an agent *commit* to a reframe under pressure instead of shipping the wrong
+  work, and (c) plausibly helps weaker models + teams — **(c) remains untested.**
+- **Untested**: weaker/older models; the real fail-open gate hook (vs the simulated
+  forced pause) — the actual hook is trivially acknowledged and may under-deliver
+  the +1 the simulated pause achieved; team-level governance value.
+
 ## Re-running
 `Workflow` the script at `workflows/scripts/pc-eval-ab-*.js` (or re-author it from
 this file's tests). Keep the checklists stable across runs so scores are comparable.
