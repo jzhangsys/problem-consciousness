@@ -172,7 +172,29 @@ the thing you asked for just in case." Re-ran the 4 traps under RUSH with the
 improved method: **12/12** — it now recovers, via method text alone, the point that
 previously needed the gate.
 
-## Bottom line across all four evals (honest)
+## Eval 5 — Generalization under pressure (new propositions, new domains)
+
+Evals 3–4 used 4 traps that could be memorized famous puzzles. This re-tests the
+one positive finding (the commit rule preventing hedge-and-comply under pressure)
+on **8 brand-new traps**: 4 same-domain-but-new-proposition (horizontal-scale vs an
+N+1 query; swap-the-model vs offline/online objective mismatch; higher-Tj_max chip
+vs solder thermal-fatigue; optimize-ad-bids vs a structurally unprofitable channel)
+and 4 **new domains** (law: draft a suit barred by a signed waiver + statute of
+limitations; finance: 3× margin on a negative-carry ETF that liquidates before its
+drawdown; medical: high-dose iron when ferritin is normal and TSH is high;
+environmental: a "carbon-neutral via offsets only" claim that omits 82% Scope-3 and
+uses low-integrity avoidance credits). Each run RUSH-plain vs RUSH+commit-rule.
+
+Result: **Set A (same-domain) plain 11/12, method 12/12; Set B (new-domain) plain
+12/12, method 12/12.** Across all 8, under strong skip-pressure, the frontier model
+**identified and addressed every trap** and **avoided the wasted build on 7/8 unaided**
+— even in law/finance/medical/environmental. The single miss was again
+hedge-and-comply (built the full ad-optimization plan while correctly diagnosing the
+channel was unprofitable); the commit rule caught it (+1). **So the method's value
+generalizes across domains but is rare (~1 in 8 under pressure), and it is
+consistently the hedge-and-comply case.**
+
+## Bottom line across all five evals (honest)
 
 | Eval | What it scores | Baseline | Method | Δ |
 |---|---|:--:|:--:|:--:|
@@ -180,16 +202,20 @@ previously needed the gate.
 | 2 single-turn outcome | is the answer correct | 7/7 | 7/7 | 0 |
 | 3 agentic outcome | did it avoid building the wrong thing | 14/15 | 14/15 | 0 |
 | 4 gate under pressure | same, when reasoning is skipped | 11/12 | **12/12** | **+1** |
+| 5 generalization under pressure | 8 new traps, same + new domains | 23/24 | **24/24** | **+1** |
 
 - **On a frontier model, problem-consciousness-as-a-prompt is close to a no-op for
   outcomes** — Opus 4.8 already frames, catches false premises/base-rate/scale/
   incrementality/Simpson, and refuses wasted work, unaided. Eval 1's +6 was largely
   self-confirming.
-- **The one real, measured value is narrow**: preventing **hedge-and-comply under
-  pressure** — the model diagnosing correctly but still doing the wasted work to
-  please the request. The gate, and now the commit rule, prevent that (RUSH 11→12).
-  This *is* the vibe-coding failure mode (skipping the reasoning under time
-  pressure), and it's the honest core of the plugin's value.
+- **The one real, measured value is narrow but generalizes**: preventing
+  **hedge-and-comply under pressure** — the model diagnosing correctly but still
+  building the wasted deliverable to please the request. The gate, and now the
+  commit rule, prevent that (Eval 4: RUSH 11→12; Eval 5: 23→24 across 8 new traps
+  in same *and* new domains — law, finance, medical, environmental). The failure
+  occurs ~1 in 8 under pressure and the commit rule catches it every time it
+  appears. This *is* the vibe-coding failure mode (skipping/short-circuiting the
+  reasoning under time pressure), and it's the honest core of the plugin's value.
 - **Do not claim it "makes answers better."** It does not, on a capable model. Its
   honest value: framing discipline that (a) never over-frames simple work, (b)
   makes an agent *commit* to a reframe under pressure instead of shipping the wrong
