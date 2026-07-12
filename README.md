@@ -67,6 +67,7 @@ The differentiating moment is the gate firing on the first mutating action:
 Method skills cover framing · problem-anchored harvest · downstream geometry/lifecycle ·
 critique & verification.
 
+- **[Worked examples →](docs/EXAMPLES.md)** (three before/after walkthroughs)
 - **[Browse all 84 skills →](docs/SKILLS.md)** (grouped catalog with one-line summaries)
 - **[Architecture →](problem-consciousness/ARCHITECTURE.md)** (the three-layer model and load-bearing gates)
 
