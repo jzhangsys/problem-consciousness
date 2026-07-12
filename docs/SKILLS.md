@@ -74,7 +74,7 @@ _Adversarial lenses, conclusion supervision, and the citation gate._
 - **`critic-law-policy`** — 法律/政策批判透鏡——法學、法規合規、智慧財產、隱私/資料保護、競爭法、政策可行性。
 - **`critic-life-cognitive`** — 生命/認知科學批判透鏡——生物技術、分子生物、醫學/臨床、藥理、腦神經科學。
 - **`critic-management`** — 企業管理批判透鏡——只審一般管理特有失效:策略分析嚴謹(Porter 五力/價值鏈/RBV-VRIO/藍海/PESTEL/Ansoff)、營運流程改善紀律(Lean/六標準差 DMAIC/TOC/TQM-Kaizen)、治理與決策偏誤(平衡計分卡/OKR/PMBOK/PRINC…
-- **`critic-market-supply`** — 產業/供應鏈專家人設,批判白地/路徑的商業與供應現實。
+- **`critic-market-supply`** — 產業/供應鏈批判透鏡——審「未來路徑/白地/值得研發/機會」結論的商業與供應現實(供應側)。
 - **`critic-marketing`** — 行銷科學批判透鏡——只審需求側/消費者/歸因主張的學科特有失效:歸因與增額性、消費者行為測量、行銷實驗效度、定位/區隔/觸及/TAM 嚴謹。
 - **`critic-natural-sciences`** — 自然科學專家批判透鏡——物理、化學、材料科學、熱力學、分子動力學。
 - **`critic-quant-finance`** — 量化專業批判透鏡——財務工程、會計、計量經濟、風險與估值。
