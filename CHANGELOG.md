@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `scripts/check-links.js` — dead relative-link check across README, CHANGELOG, docs/**,
   and ARCHITECTURE (skips external links, in-page anchors, and HTML-commented links).
   Wired into CI.
+- `docs/PHASE-2.md` — feature-deepening plan (cross-ref CI guard, gate audit log +
+  configurability, on-demand domain packs).
+- `scripts/check-skill-refs.js` — skill `[[name]]` cross-reference integrity check
+  (254 refs today, all valid); fails CI on a dangling reference. Wired into CI.
 
 ### Changed
 - README rewritten to be user-oriented: leads with the "gate, not a reminder"

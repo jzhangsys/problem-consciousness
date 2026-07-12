@@ -28,6 +28,9 @@ jobs:
       - name: Markdown dead-link check
         run: node scripts/check-links.js
 
+      - name: Skill cross-reference integrity
+        run: node scripts/check-skill-refs.js
+
       - name: Skill integrity (dir name == frontmatter name, name+description present)
         run: |
           set -euo pipefail
