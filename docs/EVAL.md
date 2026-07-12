@@ -194,7 +194,23 @@ channel was unprofitable); the commit rule caught it (+1). **So the method's val
 generalizes across domains but is rare (~1 in 8 under pressure), and it is
 consistently the hedge-and-comply case.**
 
-## Bottom line across all five evals (honest)
+## Eval 6 — Weak model (Haiku 4.5) — the value shows up here
+
+Every eval above ran on Opus 4.8, where the discipline is internalised and the
+method is ~a no-op. This re-runs the 4 agentic traps under RUSH on **Haiku 4.5**
+(weakest available), plain vs commit-rule method.
+
+Result: **plain 5/12, method 12/12 — Δ +7.** Under pressure the weak model gets
+*dragged by the request*: it built the wasted Redis cache, built the entire churn
+ML model without noticing the label pollution (0/3 on that task), listed the
+high-k materials past the Amdahl dead-premise. The commit-rule method caught all
+four (12/12). Compare the same test on Opus: Δ +1. **The method's value scales
+with the model's weakness** — near-zero on a frontier model that already frames
+well, large on a model whose problem-consciousness isn't internalised. This is the
+honest answer to "who is this plugin for": weaker/older models, and agents under
+skip-pressure.
+
+## Bottom line across all six evals (honest)
 
 | Eval | What it scores | Baseline | Method | Δ |
 |---|---|:--:|:--:|:--:|
@@ -204,10 +220,14 @@ consistently the hedge-and-comply case.**
 | 4 gate under pressure | same, when reasoning is skipped | 11/12 | **12/12** | **+1** |
 | 5 generalization under pressure | 8 new traps, same + new domains | 23/24 | **24/24** | **+1** |
 
-- **On a frontier model, problem-consciousness-as-a-prompt is close to a no-op for
-  outcomes** — Opus 4.8 already frames, catches false premises/base-rate/scale/
-  incrementality/Simpson, and refuses wasted work, unaided. Eval 1's +6 was largely
-  self-confirming.
+- **The method's value scales inversely with model capability.** On a frontier
+  model (Opus 4.8) it is close to a no-op for outcomes — Opus already frames,
+  catches false premises/base-rate/scale/incrementality/Simpson, and refuses wasted
+  work unaided (Eval 1's +6 was largely self-confirming). On a **weak model
+  (Haiku 4.5) the same method is Δ +7 / 12** (Eval 6) — the weak model gets dragged
+  into building the wrong thing under pressure and the method stops it. **This is
+  the honest answer to "who is this plugin for": weaker/older models and pressured
+  agents — not frontier models.**
 - **The one real, measured value is narrow but generalizes**: preventing
   **hedge-and-comply under pressure** — the model diagnosing correctly but still
   building the wasted deliverable to please the request. The gate, and now the

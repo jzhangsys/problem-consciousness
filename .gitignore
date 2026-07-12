@@ -37,3 +37,6 @@ Thumbs.db
 # Implementation scripts (*.py / *.html) and data files belong in a
 # separate MCP server or repo — never bundled per-skill.
 # (Config JSON like plugin.json / marketplace.json is intentionally NOT ignored.)
+
+# ── Local eval corpus (never ship) ─────────────────────────
+eval-corpus/
