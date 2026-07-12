@@ -4,12 +4,18 @@
     "name": "Justin",
     "email": "justin.chang1223@gmail.com"
   },
-  "description": "Problem-consciousness method plugin",
+  "description": "Problem-consciousness method plugins",
   "plugins": [
     {
       "name": "problem-consciousness",
       "source": "./problem-consciousness",
-      "description": "問題意識邏輯 通用方法包",
+      "description": "問題意識邏輯 通用方法包(中立核)",
+      "version": "0.3.0"
+    },
+    {
+      "name": "problem-consciousness-frontier",
+      "source": "./problem-consciousness-frontier",
+      "description": "問題意識邏輯 前沿分析包(專利/散熱白地 pipeline,需搭配中立核)",
       "version": "0.3.0"
     }
   ]

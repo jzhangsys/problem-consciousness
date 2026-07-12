@@ -1,0 +1,18 @@
+{
+  "name": "problem-consciousness-frontier",
+  "displayName": "問題意識邏輯 · 前沿分析包 Problem-Consciousness Frontier",
+  "version": "0.3.0",
+  "description": "Domain-analysis pack that sits downstream of the neutral problem-consciousness core: a concrete corpus → geometry → lifecycle → white-space pipeline, distilled from patent-landscape and thermal/materials white-space research. Carries domain-specific machinery (census, CPC/IPC, geometry/manifold/HMM analyses, patent frontier) and references a supporting Python toolchain. Install alongside problem-consciousness.",
+  "author": {
+    "name": "Justin",
+    "email": "justin.chang1223@gmail.com"
+  },
+  "keywords": [
+    "patent-landscape",
+    "white-space",
+    "technology-scouting",
+    "research",
+    "methodology"
+  ],
+  "license": "MIT"
+}
