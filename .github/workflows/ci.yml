@@ -22,6 +22,9 @@ jobs:
       - name: PreToolUse gate tests
         run: node problem-consciousness/tests/pc-gate.test.js
 
+      - name: Skill catalog freshness
+        run: node scripts/gen-skill-catalog.js --check
+
       - name: Skill integrity (dir name == frontmatter name, name+description present)
         run: |
           set -euo pipefail
