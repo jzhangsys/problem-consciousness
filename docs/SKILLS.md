@@ -67,7 +67,7 @@ _Adversarial lenses, conclusion supervision, and the citation gate._
 - **`citation-gate`** — 最終把關:確保 output 中每一個存活的結論/數字/批判都有可查證 citation,否則不放行。
 - **`critic-data-science`** — 資料科學/機器學習專屬批判透鏡——只審「資料→模型→部署」鏈上的專屬失效:資料洩漏(含時間洩漏/point-in-time)、切分與交叉驗證做錯、過擬合/資料窺探、不平衡指標誤用與校準、分佈/標籤漂移、觀察資料的因果識別(pipeline 誘發之混淆/選擇/對撞/正性/SUTV…
 - **`critic-engineering-construction`** — 工程(營造/結構/建築)批判透鏡。
-- **`critic-environmental`** — 環境批判透鏡——以成熟方法論逼問生命週期與碳盤查(LCA ISO 14040/44 邊界與分配、burden shifting、比較性主張批判性審查;GHG Protocol Scope 1/2/3、Scope 2 位置基礎 vs 市場基礎雙軌、組織/營運邊界、基準年重算、EI…
+- **`critic-environmental`** — 環境批判透鏡——以成熟方法論逼問環境評估、揭露與遵循的方法面,非化學機制、非司法責任、非估值算術。
 - **`critic-formal-math`** — 形式/數理科學專家批判透鏡——數學、幾何、統計、機率、邏輯、證明、演算法複雜度、最佳化。
 - **`critic-international-trade`** — 國際貿易批判透鏡——以成熟方法論審查跟單信用狀、Incoterms、關務與商品避險主張。
 - **`critic-investment-asset-mgmt`** — 財務會計/投資/資產管理批判透鏡,以成熟方法論逼問認列衡量與受託紀律。
