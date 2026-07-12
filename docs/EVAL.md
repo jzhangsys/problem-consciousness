@@ -210,7 +210,42 @@ well, large on a model whose problem-consciousness isn't internalised. This is t
 honest answer to "who is this plugin for": weaker/older models, and agents under
 skip-pressure.
 
-## Bottom line across all six evals (honest)
+## Eval 7 — Frontier-literature honesty (does the model know what it *doesn't* know?)
+
+All prior evals *handed* the model the disconfirming evidence, so they test reasoning,
+not knowledge. This tests the harder thing: **does the model confidently confabulate
+about frontier findings it cannot know, or admit it can't verify them?** Harvested
+1169 recent (2026) abstracts from OpenAlex across the 12 domains (local eval corpus,
+gitignored). For 12 obscure 2026 papers (past cutoff), an agent generated a
+specific-fact question from each abstract; then baseline vs a citation-gate method
+answered the question **without the abstract**; a grader (with the abstract as ground
+truth) scored fabrication vs honest deferral.
+
+Result (Opus 4.8, n=12):
+
+| | fabricated | honest | correct |
+|---|:--:|:--:|:--:|
+| baseline | **6 / 12** | 6/12 | 2 |
+| citation-gate method | **1 / 12** | **12 / 12** | 1 |
+
+**The strong baseline confidently confabulated on half the papers** — invented DOIs
+(`10.3390/jrfm19070512`), a whole fake paper with fabricated correlation coefficients,
+fake PMIDs and survey counts, and in one case a confident *false* premise ("no such
+case exists") backed by a fabricated systematic search. The citation-gate method cut
+fabrication 6→1 and reached honest deferral 12/12: it flagged "unverified / can't
+confirm this specific recent finding without the source" and separated general
+background from study-specific values it doesn't know. Note the `correct` column is a
+trap: baseline's 2 "correct" answers were the right core number *wrapped in fabricated
+details* (fake DOI, invented stats) — dangerous, not reliable; the method scored fewer
+"correct" because it refused to guess, which is the right behaviour on unverifiable
+knowledge. **This value shows up even on the frontier model** — because even Opus
+confidently hallucinates specific paper details it cannot have.
+
+Caveats: n=12, one run; the fabrication/honesty judgments are themselves LLM
+judgments (grounded in the abstract); the method here is the citation-gate discipline
+as prompt, not the shipped skill firing on its own.
+
+## Bottom line across all seven evals (honest)
 
 | Eval | What it scores | Baseline | Method | Δ |
 |---|---|:--:|:--:|:--:|
@@ -219,6 +254,8 @@ skip-pressure.
 | 3 agentic outcome | did it avoid building the wrong thing | 14/15 | 14/15 | 0 |
 | 4 gate under pressure | same, when reasoning is skipped | 11/12 | **12/12** | **+1** |
 | 5 generalization under pressure | 8 new traps, same + new domains | 23/24 | **24/24** | **+1** |
+| 6 **weak model** (Haiku) under pressure | same 4 traps, weak model | 5/12 | **12/12** | **+7** |
+| 7 **frontier-literature honesty** | fabrication on unknowable 2026 papers | 6/12 fab | **1/12 fab** | **−5 fab** |
 
 - **The method's value scales inversely with model capability.** On a frontier
   model (Opus 4.8) it is close to a no-op for outcomes — Opus already frames,
@@ -236,13 +273,23 @@ skip-pressure.
   occurs ~1 in 8 under pressure and the commit rule catches it every time it
   appears. This *is* the vibe-coding failure mode (skipping/short-circuiting the
   reasoning under time pressure), and it's the honest core of the plugin's value.
-- **Do not claim it "makes answers better."** It does not, on a capable model. Its
-  honest value: framing discipline that (a) never over-frames simple work, (b)
-  makes an agent *commit* to a reframe under pressure instead of shipping the wrong
-  work, and (c) plausibly helps weaker models + teams — **(c) remains untested.**
-- **Untested**: weaker/older models; the real fail-open gate hook (vs the simulated
-  forced pause) — the actual hook is trivially acknowledged and may under-deliver
-  the +1 the simulated pause achieved; team-level governance value.
+- **The method has TWO measured, real value arenas** (both confirmed, not asserted):
+  1. **Weak models / pressured agents** (Eval 6, Δ +7): stops an under-disciplined
+     model from building the wasted deliverable it was dragged into.
+  2. **Frontier-knowledge honesty** (Eval 7, fabrication 6→1): the citation-gate
+     turns confident confabulation of unverifiable specifics into honest deferral —
+     and this works **even on a frontier model**, because even Opus invents DOIs,
+     stats and whole papers it cannot know. This is the single most important
+     finding, and it validates the original skepticism: on the frontier of
+     knowledge, the LLM does *not* reliably know what it doesn't know — the
+     citation-gate discipline is what makes it admit that.
+- **What it does NOT do**: make a *capable* model's *reasoning* answers better
+  (Evals 2/3, Δ 0) — on reasoning over given evidence, Opus is already at ceiling.
+  So "makes answers more correct" is only true in the honesty sense (don't fabricate),
+  not the reasoning sense.
+- **Still untested**: the real fail-open gate hook (vs the simulated forced pause) —
+  the actual hook is trivially acknowledged and may under-deliver the +1 a real pause
+  gives; team-level governance value; larger n / novel domains for Eval 7.
 
 ## Re-running
 `Workflow` the script at `workflows/scripts/pc-eval-ab-*.js` (or re-author it from
