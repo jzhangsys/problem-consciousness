@@ -35,7 +35,7 @@ jobs:
         run: |
           set -euo pipefail
           fail=0
-          for d in problem-consciousness/skills/*/; do
+          for d in problem-consciousness/skills/*/ problem-consciousness-frontier/skills/*/; do
             n="$(basename "$d")"
             f="$d/SKILL.md"
             [ -f "$f" ] || { echo "MISSING SKILL.md: $d"; fail=1; continue; }
@@ -48,5 +48,8 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Strict plugin validation
+      - name: Strict plugin validation (core)
         run: claude plugin validate ./problem-consciousness --strict
+
+      - name: Strict plugin validation (frontier)
+        run: claude plugin validate ./problem-consciousness-frontier --strict

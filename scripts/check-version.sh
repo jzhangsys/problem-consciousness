@@ -25,14 +25,26 @@ echo "Canonical version: $canonical (from $plugin_json)"
 
 fail=0
 
-# marketplace.json "version"
-mk="$(grep -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$marketplace_json" \
+# frontier plugin.json "version"
+frontier_json="problem-consciousness-frontier/.claude-plugin/plugin.json"
+fr="$(grep -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$frontier_json" \
   | head -1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || true)"
-if [ "$mk" != "$canonical" ]; then
-  echo "FAIL: $marketplace_json version '$mk' != '$canonical'" >&2
+if [ "$fr" != "$canonical" ]; then
+  echo "FAIL: $frontier_json version '$fr' != '$canonical'" >&2
   fail=1
 else
-  echo "  ok: $marketplace_json = $mk"
+  echo "  ok: $frontier_json = $fr"
+fi
+
+# marketplace.json — EVERY plugin entry's version must match.
+mk_bad="$(grep -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$marketplace_json" \
+  | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "^$canonical$" || true)"
+mk_count="$(grep -coE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$marketplace_json" || true)"
+if [ -n "$mk_bad" ]; then
+  echo "FAIL: $marketplace_json has version(s) != '$canonical': $mk_bad" >&2
+  fail=1
+else
+  echo "  ok: $marketplace_json — all $mk_count entries = $canonical"
 fi
 
 # SUBMISSION.md "| Version | \`x.y.z\` |"
