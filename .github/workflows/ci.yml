@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate plugin, gate tests, version consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Version consistency
+        run: bash scripts/check-version.sh
+
+      - name: PreToolUse gate tests
+        run: node problem-consciousness/tests/pc-gate.test.js
+
+      - name: Skill integrity (dir name == frontmatter name, name+description present)
+        run: |
+          set -euo pipefail
+          fail=0
+          for d in problem-consciousness/skills/*/; do
+            n="$(basename "$d")"
+            f="$d/SKILL.md"
+            [ -f "$f" ] || { echo "MISSING SKILL.md: $d"; fail=1; continue; }
+            fm="$(grep -m1 '^name:' "$f" | sed 's/name:[[:space:]]*//' | tr -d '\r')"
+            [ "$fm" = "$n" ] || { echo "NAME MISMATCH dir=$n frontmatter=$fm"; fail=1; }
+            grep -q '^description:' "$f" || { echo "NO description: $d"; fail=1; }
+          done
+          [ "$fail" -eq 0 ] && echo "All skills OK" || exit 1
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Strict plugin validation
+        run: claude plugin validate ./problem-consciousness --strict

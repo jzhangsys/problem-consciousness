@@ -1,0 +1,18 @@
+{
+  "name": "problem-consciousness",
+  "displayName": "問題意識邏輯 Problem-Consciousness",
+  "version": "0.3.0",
+  "description": "A domain-general governance + method layer that installs problem-consciousness into AI workflows: a Meta layer fixes epistemic status and clears framing anti-patterns before any domain method runs; a P0-P10 state machine refuses 'Done' until a problem model is qualified; peer cross-check + a deterministic arbiter keep multi-agent consensus from overriding computed truth; every downstream step is anchored to a framed problem and citation-gated.",
+  "author": {
+    "name": "Justin",
+    "email": "justin.chang1223@gmail.com"
+  },
+  "keywords": [
+    "problem-framing",
+    "research",
+    "methodology",
+    "verification",
+    "topology"
+  ],
+  "license": "MIT"
+}
