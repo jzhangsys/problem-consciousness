@@ -25,6 +25,9 @@ jobs:
       - name: Skill catalog freshness
         run: node scripts/gen-skill-catalog.js --check
 
+      - name: Markdown dead-link check
+        run: node scripts/check-links.js
+
       - name: Skill integrity (dir name == frontmatter name, name+description present)
         run: |
           set -euo pipefail

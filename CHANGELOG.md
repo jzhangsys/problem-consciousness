@@ -25,6 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/EXAMPLES.md` — three before/after worked examples (problem-anchored corpus,
   deterministic arbiter over multi-agent consensus, verify-before-you-spin-up), linked
   from the README.
+- `scripts/check-links.js` — dead relative-link check across README, CHANGELOG, docs/**,
+  and ARCHITECTURE (skips external links, in-page anchors, and HTML-commented links).
+  Wired into CI.
 
 ### Changed
 - README rewritten to be user-oriented: leads with the "gate, not a reminder"
