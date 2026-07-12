@@ -12,4 +12,6 @@ description: 法律/政策批判透鏡——法學、法規合規、智慧財產
 5. **智財**:請求項範圍、前案、FTO、專利族/同族、地域性;勿混「字面」與「實質」覆蓋。
 6. **隱私/資料**:GDPR/CCPA/個資法的合法性基礎、同意、跨境傳輸、最小化。
 7. **政策可行性**:執行成本、誘因相容、意外後果、利害關係人、可執行性。
-輸出:SOUND/CONDITIONAL/FLAWED + 法律理由 + 需補的法源/管轄釐清;缺證交 critique-harvest。本批判為分析非法律意見;高風險事項建議諮詢執業律師。
+輸出:SOUND/CONDITIONAL/FLAWED + 法律理由 + 需補的法源/管轄釐清;缺證交 [[critique-harvest]]。本批判為分析非法律意見;高風險事項建議諮詢執業律師。
+
+由 [[expert-critique-router]] 觸發,於 [[problem-level-processing]] L2(概念/要件)/L6(驗證)發力,與 [[meta-problem-layer]] 因果懷疑互查。

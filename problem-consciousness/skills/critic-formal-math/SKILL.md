@@ -11,4 +11,6 @@ description: 形式/數理科學專家批判透鏡——數學、幾何、統計
 4. **幾何/拓樸**:維度、度量、流形假設、不變量論證是否成立;有無把低維直覺誤套高維。
 5. **演算法/最佳化**:複雜度(時間/空間)主張正確嗎?收斂性/全域最佳 vs 局部、NP-hard 宣稱、近似比有界嗎?
 6. **數值穩定**:條件數、捨入誤差、病態問題、蒙地卡羅變異與種子相依。
-輸出:SOUND/CONDITIONAL/FLAWED + 形式理由 + 反例或需補的證明/檢定;缺證交 critique-harvest。
+輸出:SOUND/CONDITIONAL/FLAWED + 形式理由 + 反例或需補的證明/檢定;缺證交 [[critique-harvest]]。
+
+由 [[expert-critique-router]] 觸發,於 [[problem-level-processing]] L4(機制/因果)/L6(驗證設計)發力,與 [[meta-problem-layer]] 因果懷疑互查。

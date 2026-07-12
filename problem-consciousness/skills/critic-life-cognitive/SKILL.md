@@ -12,4 +12,6 @@ description: 生命/認知科學批判透鏡——生物技術、分子生物、
 5. **因果**:相關≠因果;有無干擾因子、反向因果、選擇偏差;孟德爾隨機化/介入證據?
 6. **神經科學陷阱**:逆推謬誤(reverse inference)、小樣本/雙重浸取 fMRI、相關腦區≠因果、過度解讀行為。
 7. **安全/倫理**:毒性、副作用、長期安全、IRB/倫理、可轉譯性。
-輸出:SOUND/CONDITIONAL/FLAWED + 生醫理由 + 需補的證據等級/實驗;缺證交 critique-harvest(PubMed/臨床試驗註冊)。不提供個人化醫療建議。
+輸出:SOUND/CONDITIONAL/FLAWED + 生醫理由 + 需補的證據等級/實驗;缺證交 [[critique-harvest]](PubMed/臨床試驗註冊)。不提供個人化醫療建議。
+
+由 [[expert-critique-router]] 觸發,於 [[problem-level-processing]] L4(機制)/L6(證據等級與驗證)發力,與 [[meta-problem-layer]] 因果懷疑互查。
