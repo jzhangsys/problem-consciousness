@@ -33,6 +33,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `scripts/check-skill-refs.js` — skill `[[name]]` cross-reference integrity check
   (254 refs today, all valid); fails CI on a dangling reference. Wired into CI.
 
+### Added — gate feature deepening (Phase 2B)
+- `PC_GATE_MODE` env var: `block` (default, unchanged behavior), `warn` (advisory only,
+  never blocks), `off` (disabled). Unknown values fall back to `block`.
+- Auditable ack log: acknowledged verdicts are appended to
+  `~/.problem-consciousness/ack-log.jsonl` (timestamp, session, verdict). Best-effort and
+  fail-open — a logging or config error still allows the action.
+- Gate tests expanded 6 → 13 (ack-log content, logging-failure fail-open, off/warn/unknown
+  modes), all routed through a throwaway HOME so tests never touch the real home dir.
+
 ### Changed
 - README rewritten to be user-oriented: leads with the "gate, not a reminder"
   differentiator, adds a before/after of the mis-framed-request problem, a 60-second

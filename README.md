@@ -83,6 +83,22 @@ Two hooks, two strengths:
 This is the difference between a reminder you can silently skip and a gate you must
 consciously pass once before touching anything.
 
+### Configuration
+
+The gate defaults to `block` and needs no configuration. To change its strength, set
+`PC_GATE_MODE`:
+
+| `PC_GATE_MODE` | Behavior |
+|---|---|
+| `block` (default) | Hard-blocks the first mutating action until the Meta self-check is acknowledged. |
+| `warn` | Never blocks; emits a one-time advisory, then runs unimpeded. |
+| `off` | Disables the gate entirely. |
+
+Every acknowledged verdict (ROUTE / REFRAME / REJECT / HOLD + your reasoning) is appended
+to `~/.problem-consciousness/ack-log.jsonl` — an auditable trail of the problems you
+consciously framed. Logging is best-effort and, like the whole gate, **fail-open**: any
+error in config parsing or logging still allows your action.
+
 ## Install
 
 ```
