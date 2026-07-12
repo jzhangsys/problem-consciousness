@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `plugin.json`, `marketplace.json`, and `SUBMISSION.md`.
 - `.github/workflows/ci.yml` — CI runs strict plugin validation, the gate tests,
   and the version-consistency check on every push and pull request.
+- `docs/PHASE-1.md` — Docs & DX plan (user-oriented README, skill catalog, worked
+  examples, demo asset) with acceptance criteria and commit sequence.
+- `docs/demo/` — demo GIF shooting script (`README.md`) and a VHS `demo.tape`
+  storyboarding the gate-block money shot.
 
 ### Fixed
 - Version drift: `SUBMISSION.md` listed `0.2.0` while the plugin shipped `0.3.0`.
