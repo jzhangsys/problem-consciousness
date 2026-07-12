@@ -42,6 +42,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Gate tests expanded 6 → 13 (ack-log content, logging-failure fail-open, off/warn/unknown
   modes), all routed through a throwaway HOME so tests never touch the real home dir.
 
+### Added — three core skills forged by a 2-round dialectic
+Built by a multi-agent dialectical workflow (thesis → antithesis panel of three
+opposing schools → synthesis, twice → neutrality/format gate); every draft passed
+its gate with zero blockers and zero domain residue.
+- `critic-data-science` — a data-science/ML critique lens (leakage, CV/time leakage,
+  imbalance & metric misuse, drift, observational-causal identification via DAGs,
+  bad control/positivity/SUTVA, quasi-experiment validity, label quality, fairness,
+  reproducibility, online–offline gap). Carves a clean delta vs `critic-formal-math`
+  (statistics/proofs) and `critic-quant-finance` (econometric estimators). Wired into
+  `expert-critique-router`.
+- `dialectical-reasoning` — a domain-neutral Hegelian/Marxist dialectic (generate the
+  object's internal contradiction, determinate negation → negation-of-negation →
+  sublation, quantity→quality, totality). The Marxist antithesis agent caught an
+  idealist-residue blocker in round 1; the synthesis defaults to materialist reading.
+- `abductive-conjecture` — Peircean abduction + grounded conjecture generation (the
+  missing hypothesis-generation half). Antithesis agents caught two blockers — a
+  provenance rule that would have killed novelty, and prior-compatibility weighting
+  that inverted Popper — both resolved in synthesis.
+- New "Reasoning engines" catalog group. Core 26 → 29.
+
 ### Added — staged handling of soft (non-quantifiable) problems
 - `staged-clarification` core skill: a staged (L0–L8) clarification pathway for normative /
   conceptual / practical problems (personal, business, strategy, values) that cannot be

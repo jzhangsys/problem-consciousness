@@ -36,6 +36,8 @@ const PLUGINS = [
 const CATEGORIES = [
   ['Governance', 'The constitution: runs above every method and keeps verdicts honest.',
     n => ['meta-problem-layer', 'problem-state-machine', 'peer-cross-check'].includes(n)],
+  ['Reasoning engines (推理引擎)', 'Generative reasoning operations: dialectic and abduction.',
+    n => ['dialectical-reasoning', 'abductive-conjecture'].includes(n)],
   ['Framework schema (問題框架)', 'Build and stress-test the problem-framing schema itself.',
     n => /^framework-/.test(n)],
   ['Extraction (抽取)', 'Pull structured evidence from full text without losing context.',
