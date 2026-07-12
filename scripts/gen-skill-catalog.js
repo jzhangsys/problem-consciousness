@@ -55,7 +55,7 @@ const CATEGORIES = [
     n => /^critic-/.test(n) || /^expert-critique/.test(n) || /^conclusion-/.test(n) ||
       ['citation-gate', 'critique-harvest', 'register-distortion'].includes(n)],
   ['Framing & problem model (問題框定)', 'Frame, identify, decompose and qualify the problem.',
-    n => /^problem-/.test(n) || ['wellposedness-gate', 'ssif-reasoning-os'].includes(n)],
+    n => /^problem-/.test(n) || ['wellposedness-gate', 'ssif-reasoning-os', 'staged-clarification'].includes(n)],
   ['Domain & analysis (領域方法)', 'Cross-cutting analysis methods and consistency checks.',
     n => ['domain-analysis-methodology', 'five-axis-consistency', 'three-layer-relations',
           'patent-frontier-pc', 'frontier-live-scan', 'whitespace-definition'].includes(n)],

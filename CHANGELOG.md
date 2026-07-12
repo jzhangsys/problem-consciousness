@@ -42,6 +42,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Gate tests expanded 6 → 13 (ack-log content, logging-failure fail-open, off/warn/unknown
   modes), all routed through a throwaway HOME so tests never touch the real home dir.
 
+### Added — staged handling of soft (non-quantifiable) problems
+- `staged-clarification` core skill: a staged (L0–L8) clarification pathway for normative /
+  conceptual / practical problems (personal, business, strategy, values) that cannot be
+  expressed as a physical metric+unit+scale. Measurement is replaced by an operationalizable
+  **decision criterion**; a three-way "root cause of vagueness" split (missing info / missing
+  trade-off / missing commitment) stops the common spin of researching a decision problem.
+- Micro-tuned the framing path so it no longer rejects soft problems as "vague topics":
+  `problem-identification` now routes non-quantifiable classes to `staged-clarification`
+  instead of bouncing them; `problem-framing` and `meta-problem-layer` route by epistemic
+  state (quantifiable → `problem-identification`; normative/conceptual/practical →
+  `staged-clarification`). Neither path lets vagueness pass — only the notion of "clear"
+  differs (physical units vs decision criteria).
+
 ### Changed — split into neutral core + frontier pack
 - The single 84-skill plugin was split into two: **`problem-consciousness`** (25-skill
   domain-neutral core: governance + framing + general critique/verification + the gate) and
