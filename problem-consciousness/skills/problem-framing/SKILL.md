@@ -14,6 +14,7 @@ description: 問題意識層(主控)。在任何 harvest / 嵌入 / 白地 / 物
 - 要設計 harvest 種子、要定義白地、要框機會/未來路徑 → 必先跑本層並用其輸出當種子。
 
 ## 流程(辨識→拆解→驗證→傳播)
+> 此為**可量化路徑**。軟問題(概念/規範/實務)不走以下拆解/驗證,改由 [[staged-clarification]] 自帶的 L0–L8 逐階澄清(判準取代物理量測)。
 1. **辨識**(從可量化瓶頸,非模糊主題)→ `problem-identification`
 2. **拆解**(系統→元件→機制→物理極限,沿系統端到端的因果/阻抗鏈)→ `problem-decomposition`
 3. **驗證**(是真瓶頸嗎?物理+Amdahl+部署落差)→ `problem-validation`
