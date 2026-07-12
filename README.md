@@ -59,7 +59,7 @@ The differentiating moment is the gate firing on the first mutating action:
 
 ## What's inside
 
-This is the **neutral core** — **25 skills**: governance + framing + general-purpose
+This is the **neutral core** — **35 skills**: governance + framing + general-purpose
 critique/verification, plus the gate. Governance three:
 - `meta-problem-layer` — fix the epistemic status and clear framing anti-patterns before any method runs
 - `problem-state-machine` — a P0–P10 pipeline that refuses "Done" until the problem is qualified
@@ -69,7 +69,7 @@ The rest cover problem framing · problem-anchored harvest · domain-general cri
 · validation gates.
 
 > **Companion pack.** A separate, optional plugin — **`problem-consciousness-frontier`**
-> (59 skills) — carries a concrete corpus → geometry → lifecycle → white-space analysis
+> (62 skills) — carries a concrete corpus → geometry → lifecycle → white-space analysis
 > pipeline distilled from patent-landscape and thermal/materials research. It is deliberately
 > **not** bundled into the neutral core; install it only if you want that domain machinery.
 

@@ -22,5 +22,5 @@ P0 原始輸入 → P1 現象捕捉 → P2 問題候選 → P3 領域 routed →
 狀態機的底層是一個 Problem Model 物件 + 一支 validator,強制上述不變量。skill / workflow / agent 是上層機器;真正承重的,是「任何 Problem Model 都必須滿足的不變量」= 那道「拒絕太早 Done」的閘。
 
 ## 用途
-把 [[problem-spine]] / [[pc-genesis-loop]] / [[pc-control-loop]] 等散步驟,收束成可稽核的狀態機骨架。
+把 [[problem-spine]] 等散步驟,收束成可稽核的狀態機骨架。
 承 [[meta-problem-layer]](P2 前的認識論把關),接 [[problem-validation]](P7 資格閘)、[[problem-anchored-harvest]](P5 證據)。

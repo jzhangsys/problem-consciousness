@@ -18,4 +18,4 @@ description: 【C章·批判】 敵對找回被驗證誤殺的好組合——被
 - 反序處理被殺清單(尾端常被草率)。
 
 ## 輸出
-救回清單 + 每條救回理由(abstract 佐證)。救回項回 [[validation-precision-first-strategy]] 重評。隸屬 [[pc-genesis-loop]] C 章。
+救回清單 + 每條救回理由(abstract 佐證)。救回項回精準度優先的驗證策略重評。

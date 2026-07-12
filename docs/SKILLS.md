@@ -7,8 +7,8 @@
 
 | Plugin | Skills |
 |---|---|
-| [Core — problem-consciousness (neutral)](#core-problem-consciousness-neutral) | 38 |
-| [Frontier pack — problem-consciousness-frontier](#frontier-pack-problem-consciousness-frontier) | 59 |
+| [Core — problem-consciousness (neutral)](#core-problem-consciousness-neutral) | 35 |
+| [Frontier pack — problem-consciousness-frontier](#frontier-pack-problem-consciousness-frontier) | 62 |
 
 # Core — problem-consciousness (neutral)
 
@@ -20,8 +20,7 @@ _Domain-neutral governance + framing + general critique/verification. Install th
 | Reasoning engines (推理引擎) | 2 |
 | Validation (驗證) | 3 |
 | Harvest / keyword / anchor (採集·錨定) | 1 |
-| Loops & orchestration (環路) | 2 |
-| Critique & verify (批判·查證) | 20 |
+| Critique & verify (批判·查證) | 19 |
 | Framing & problem model (問題框定) | 7 |
 
 ## Governance (3)
@@ -53,14 +52,7 @@ _Turn a framed problem into corpora: harvest, keyword design, anchoring._
 
 - **`problem-anchored-harvest`** — 問題錨定 harvest——用驗證過的核心問題/子問題當『種子』設計各源 harvest(論文/專利/研討會/研發補助/產業新聞),不用窄應用關鍵詞。
 
-## Loops & orchestration (環路) (2)
-
-_Multi-step loops that drive a problem through the pipeline._
-
-- **`pipeline-rectify`** — 把文獻佐證的批判導正回 pipeline,並完整保留導正過程(before→after provenance)。
-- **`rectify-reverify`** — 對導正後的 output 做對抗式重驗,確保最終結論全數通過三專家透鏡(物理/IP/市場)。
-
-## Critique & verify (批判·查證) (20)
+## Critique & verify (批判·查證) (19)
 
 _Adversarial lenses, conclusion supervision, and the citation gate._
 
@@ -82,7 +74,6 @@ _Adversarial lenses, conclusion supervision, and the citation gate._
 - **`critic-social-science`** — 社會/行為/制度/文化主張的方法批判透鏡,守集體/社會/制度層,兼量化實證與詮釋質性兩典範——審構念效度與測量、抽樣代表性(WEIRD/選擇/非回應)、層次謬誤、社會因果識別與可轉移性、反身性/展演性、複製生態。
 - **`critic-software-engineering`** — 軟體工程批判透鏡——審程式設計、軟體架構、資料庫/資料建模,以及 AI 輔助/vibe coding 產出的工程可信度,用 SOLID/DDD/Clean-Hexagonal、測試金字塔/TDD/變異測試、正規化/ACID/CAP-PACELC、OWASP/STRIDE/DOR…
 - **`critique-harvest`** — 對每個批判點,實際 harvest 文獻/產業報告佐證(WebSearch/WebFetch/OpenAlex/PubMed),每個批判主張都要附可查證參考。
-- **`expert-critique-chain`** — 自動批判導正鏈——對任何「技術白地/機會/未來路徑」output,自動依序跑七專家 skill:三透鏡批判→抓文獻→抓產業新聞→導正→重驗→citation把關,最終只放行全數附文獻且通過三透鏡的結論。
 - **`expert-critique-router`** — 跨學科專家批判路由器——對任何「結論/主張/白地/機會/方向/建議」做領域專家級正確性審查。
 
 ## Framing & problem model (問題框定) (7)
@@ -108,8 +99,8 @@ _The corpus → geometry → lifecycle → white-space pipeline, distilled from 
 | Validation (驗證) | 3 |
 | Downstream method (幾何 / 流形 / 生命週期) | 15 |
 | Harvest / keyword / anchor (採集·錨定) | 12 |
-| Loops & orchestration (環路) | 6 |
-| Critique & verify (批判·查證) | 5 |
+| Loops & orchestration (環路) | 8 |
+| Critique & verify (批判·查證) | 6 |
 | Framing & problem model (問題框定) | 2 |
 | Domain & analysis (領域方法) | 6 |
 
@@ -178,7 +169,7 @@ _Turn a framed problem into corpora: harvest, keyword design, anchoring._
 - **`narrow-keyword-backfill`** — ★通用補救手法:當某問題節點(problem_id)有下游覆蓋、卻在驗證階段缺(寬詞紅海未過精準度閘)→ 用窄關鍵字回填閉合其問題意識鏈斷點。
 - **`systematic-anchoring-discipline`** — 【錨定·第一層】 全 pipeline 通用的系統性錨定紀律:把任何「宣稱某 item 屬於 problem_id」的錨定主張(corpus/抽取ckpt/量化證據/關鍵字/KG邊)過同一個 deterministic 鑑別閘,判 KEEP/REANCHOR/OFFAXIS/D…
 
-## Loops & orchestration (環路) (6)
+## Loops & orchestration (環路) (8)
 
 _Multi-step loops that drive a problem through the pipeline._
 
@@ -188,8 +179,10 @@ _Multi-step loops that drive a problem through the pipeline._
 - **`pc-downstream-loop`** — ★下游階段(幾何/HMM/KG-RAG/機會合成)的三角色(策略/監督/批判)審核總控,延續 pc-genesis-loop 紀律到創世之後。
 - **`pc-extraction-loop`** — ★四件套抽取(痛點/解法/材料/量化/新穎性)的 Claude-subagent 路線總控,延續 pc-genesis-loop / pc-downstream-loop 紀律。
 - **`pc-genesis-loop`** — ★問題意識「創世步驟」總控:input 一進來就發動,是全 pipeline 所有問題意識邏輯的開端。
+- **`pipeline-rectify`** — 把文獻佐證的批判導正回 pipeline,並完整保留導正過程(before→after provenance)。
+- **`rectify-reverify`** — 對導正後的 output 做對抗式重驗,確保最終結論全數通過三專家透鏡(物理/IP/市場)。
 
-## Critique & verify (批判·查證) (5)
+## Critique & verify (批判·查證) (6)
 
 _Adversarial lenses, conclusion supervision, and the citation gate._
 
@@ -197,6 +190,7 @@ _Adversarial lenses, conclusion supervision, and the citation gate._
 - **`conclusion-evidence-supervision`** — 【結論·監督】 審查結論草稿:每句是否對得上 deterministic 訊號(幾何/HMM/census)、每個事實主張是否有 RAG citation、problem_id 是否錨定、是否逾越拓樸/HMM 合法語域、四禁是否滿足、是否與 deterministic 判決衝突。
 - **`conclusion-synthesis-strategy`** — 【結論·策略】 怎麼把 deterministic 判決(幾何/HMM/census/物理)寫成「結論草稿」——沿 KG 脈絡、調用 RAG 引用、按問題意識八層結構鋪陳,每句鎖在拓樸/HMM 合法語域。
 - **`critic-ip-landscape`** — 專利/IP landscape 專家人設,批判「白地」是否為語料取樣假象而非全球真空白。
+- **`expert-critique-chain`** — 自動批判導正鏈——對任何「技術白地/機會/未來路徑」output,自動依序跑七專家 skill:三透鏡批判→抓文獻→抓產業新聞→導正→重驗→citation把關,最終只放行全數附文獻且通過三透鏡的結論。
 - **`register-distortion`** — 跨模態語域『扭曲度』閘——專利(法律語言)、學術(機制語言)、市場(產品語言)很可能不共享語言,嵌入會因『語域』而非技術把模態分開,使白地/相似度結論變語域假象(專利尤其嚴重)。
 
 ## Framing & problem model (問題框定) (2)

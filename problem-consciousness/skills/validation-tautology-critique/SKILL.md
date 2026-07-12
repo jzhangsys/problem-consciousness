@@ -18,4 +18,4 @@ description: 【C章·批判】 敵對抓出驗證的套套邏輯——標題只
 - 不得只抽查「剛看到的幾條漂亮 abstract」就放行全體;要對回聲比例做全體統計。
 
 ## 輸出
-回聲比例 + 領域非瓶頸的 valid 清單 + 量化/解法缺席清單。FAIL 回 [[validation-precision-first-strategy]]。隸屬 [[pc-genesis-loop]] C 章,與 [[validation-false-kill-critique]] 並列批判。
+回聲比例 + 領域非瓶頸的 valid 清單 + 量化/解法缺席清單。FAIL 回精準度優先的驗證策略。與 [[validation-false-kill-critique]] 並列批判。

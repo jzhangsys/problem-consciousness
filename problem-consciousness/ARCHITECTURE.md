@@ -32,16 +32,16 @@ about the wrong question*.
 - **Downstream method**: geometry-*, manifold-*, hmm-* (used only under their validity gates)
 - **Critique / verify**: expert-critique-router, critic-* (domain-general lenses), citation-gate,
   conclusion-* …
-- **Governance (this layer)**: meta-problem-layer, problem-state-machine, peer-cross-check.
+- **Governance (cuts across layers, not a single layer)**: meta-problem-layer (Meta), problem-state-machine (Operational), peer-cross-check (multi-agent overlay).
 
 The method skills are the tools; the governance layer is the constitution that keeps every tool
 anchored to a well-framed problem and gated before it propagates.
 
 ## Two plugins: neutral core + frontier pack
 
-This plugin (`problem-consciousness`, 25 skills) is the **domain-neutral core**: governance,
+This plugin (`problem-consciousness`, 35 skills) is the **domain-neutral core**: governance,
 framing, general-purpose critique/verification, and the gate. A separate, optional plugin —
-`problem-consciousness-frontier` (59 skills) — holds the concrete downstream pipeline
+`problem-consciousness-frontier` (62 skills) — holds the concrete downstream pipeline
 (corpus → geometry → lifecycle → white-space) distilled from patent-landscape and
 thermal/materials research, along with its supporting Python toolchain. The split keeps the
 core genuinely field-agnostic while preserving the domain machinery for those who want it.
