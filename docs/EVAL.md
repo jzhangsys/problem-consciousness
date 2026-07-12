@@ -80,6 +80,59 @@ sentences; method fixed the criminal-law elements first).
    instincts (esp. T5), so the measured Δ understates the value on genuinely naive
    models; Δ is largest where the misframing is hardest to resist (T4).
 
+## Eval 2 — Outcome-based (breaks the circularity of Eval 1)
+
+Eval 1 grades **whether the ritual was performed** (reframe? name the anti-pattern?),
+using a checklist derived from the method itself — so it is partly self-confirming.
+Eval 2 removes that: problems with an **objectively known answer**, graded **only on
+whether the final answer is correct vs ground truth** (plus, for simple items,
+whether it was answered *directly* without ceremony). No method vocabulary in the
+grading. Two categories:
+- **Traps** (method should help): a strong-but-naive answer is *wrong*; correct
+  requires catching the trap. False-premise, base-rate neglect, hotspot-vs-average
+  scale, ad incrementality, Simpson's paradox.
+- **Simple / red-team** (method should get *out of the way*): trivial fact,
+  translation. Over-framing = failure.
+
+### Results — run of 2026-07-12 (Claude Opus 4.8)
+
+| Problem | Type | Baseline | With method |
+|---|---|:--:|:--:|
+| O1 false-premise | trap | 1 | 1 |
+| O2 base-rate | trap | 1 | 1 |
+| O3 hotspot scale | trap | 1 | 1 |
+| O4 incrementality | trap | 1 | 1 |
+| O5 Simpson | trap | 1 | 1 |
+| O6 fact (H₂O) | simple | 1 | **0** → **1** after fix |
+| O7 translation | simple | 1 | **0** → **1** after fix |
+| **Total** | | **7 / 7** | **5 / 7 → 7 / 7 after fix** |
+
+### Honest findings (this is the important part)
+1. **On single-turn reasoning with a strong model, the method's outcome value is
+   ~0.** Opus 4.8 already caught all five traps unaided. Eval 1's +6 was therefore
+   **largely circular** — it rewarded performing the framing ritual, not getting a
+   better answer.
+2. **The method initially *hurt* on the simple items (−2)**: the just-added
+   applicability rule made the model *announce* "this doesn't need reframing" —
+   which is itself over-framing. Fixed by making the applicability boundary
+   **silent** (`meta-problem-layer`); a re-check confirmed O6/O7 recover to direct,
+   correct answers. Net after fix: **parity (7/7), not a win.**
+3. **Re-scoped value claim.** The plugin should *not* be sold as "makes answers
+   more correct" — the outcome evidence does not support that on a capable model.
+   Its value is what the README already claims: **framing discipline for agentic,
+   multi-step, high-stakes work** — stopping "correct about the wrong problem"
+   *before* an agent executes many steps of wrong work — plus governance (ack-log,
+   citation-gate, deterministic arbiter). Mis-framing compounds across steps; a
+   single-turn Q&A cannot exercise that, so **single-turn evals (both Eval 1 and
+   Eval 2) are the wrong test bed for this plugin's real value.**
+4. **What a valid test needs**: an **agentic outcome eval** — a multi-step task
+   where a mis-framed start leads to measurable wasted/wrong downstream work, scored
+   by how much waste the method prevents. Not yet built; this is the honest next step.
+
+Caveats: n small (5 traps + 2 simple), one model, and the traps are well-known
+puzzles the model may have memorized — a harder test would use novel traps and a
+weaker model, where base reasoning is less reliable and the method may still help.
+
 ## Re-running
 `Workflow` the script at `workflows/scripts/pc-eval-ab-*.js` (or re-author it from
 this file's tests). Keep the checklists stable across runs so scores are comparable.
